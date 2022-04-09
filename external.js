@@ -1,10 +1,14 @@
 let playerScore = 0;
 let computerScore = 0;
 
-function resetScore() {
-    playerScore = 0;
-    computerScore = 0;
-}
+const messageDiv = document.querySelector('#result');
+const scoreDiv = document.querySelector('#score');
+const buttons = document.querySelectorAll('button');
+buttons.forEach((button) => {
+    button.addEventListener('click', () => {
+        playRound(button.textContent, computerPlay());
+    });
+});
 
 function computerPlay() {
     let num = Math.random()*100;
@@ -14,41 +18,50 @@ function computerPlay() {
 }
 
 function playRound(playerSelection, computerSelection) {
-    let roundMessage = 'Something went wrong...';
-    playerSelection = playerSelection.slice(0,1).toUpperCase() + playerSelection.substr(1).toLowerCase();
-
+    
     if (playerSelection == 'Rock' && computerSelection == 'Scissors' || 
         playerSelection == 'Paper' && computerSelection == 'Rock' || 
         playerSelection == 'Scissors' && computerSelection == 'Paper') {
+            let result = "You win!";
             playerScore++;
-            roundMessage = `You Win! ${playerSelection} beats ${computerSelection}.`;
-
+            showRoundMsg(playerSelection, computerSelection, result);
         }
     else  if (playerSelection == 'Rock' && computerSelection == 'Paper' || 
               playerSelection == 'Paper' && computerSelection == 'Scissors' || 
               playerSelection == 'Scissors' && computerSelection == 'Rock') {
+                let result = "You lose!";
                 computerScore++;
-                roundMessage = `You Lose! ${computerSelection} beats ${playerSelection}.`;
+                showRoundMsg(playerSelection, computerSelection, result);
         }
-    else roundMessage = `Draw!`;
+    else {
+        let result = "Draw!"
+        showRoundMsg(playerSelection, computerSelection, result);
+    }
 
-
-    scoreDiv.textContent = `You scored ${playerScore} and Computer scored ${computerScore}.`;
-    messageDiv.textContent = roundMessage;
+    showScoreMsg();
 
     if (playerScore == 5 || computerScore == 5) {
-        messageDiv.textContent = (playerScore > computerScore)? "YOU ARE THE FINAL WINNER!":"COMPUTER IS THE FINAL WINNER!";
+        showFinalMsg();
         resetScore();
     }
 
     return;
     }
 
-const messageDiv = document.querySelector('#result');
-const buttons = document.querySelectorAll('button');
-buttons.forEach((button) => {
-    button.addEventListener('click', () => {
-        playRound(button.id, computerPlay());
-    });
-});
-const scoreDiv = document.querySelector('#score');
+function showRoundMsg(playerSelection, computerSelection, result) {
+    messageDiv.textContent = `${playerSelection} V.S. ${computerSelection} - ${result}`;
+}
+
+function showScoreMsg() {
+    scoreDiv.textContent = `Your score: ${playerScore}  -  Computer's score: ${computerScore}`;
+}
+
+function showFinalMsg() {
+    messageDiv.textContent = (playerScore > computerScore) ? "YOU SCORED 5! YOU WIN THE GAME!" : "GAME OVER! COMPUTER SCORED 5!";
+}
+
+function resetScore() {
+    playerScore = 0;
+    computerScore = 0;
+}
+    
