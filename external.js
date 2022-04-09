@@ -1,8 +1,7 @@
 let playerScore = 0;
 let computerScore = 0;
 
-const messageDiv = document.querySelector('#result');
-const scoreDiv = document.querySelector('#score');
+const msgBoard = document.querySelector('#msgBoard');
 const buttons = document.querySelectorAll('button');
 buttons.forEach((button) => {
     button.addEventListener('click', () => {
@@ -49,15 +48,28 @@ function playRound(playerSelection, computerSelection) {
     }
 
 function showRoundMsg(playerSelection, computerSelection, result) {
-    messageDiv.textContent = `${playerSelection} V.S. ${computerSelection} - ${result}`;
+    msg = document.createElement("div");
+    msg.textContent = `${playerSelection} V.S. ${computerSelection} - ${result}`;
+    msgBoard.insertBefore(msg, msgBoard.firstChild);
 }
 
 function showScoreMsg() {
-    scoreDiv.textContent = `Your score: ${playerScore}  -  Computer's score: ${computerScore}`;
+    msg = document.createElement("div");
+    msg.textContent = `Your score: ${playerScore}  -  Computer's score: ${computerScore}`;
+    msgBoard.insertBefore(msg, msgBoard.firstChild);
 }
 
 function showFinalMsg() {
-    messageDiv.textContent = (playerScore > computerScore) ? "YOU SCORED 5! YOU WIN THE GAME!" : "GAME OVER! COMPUTER SCORED 5!";
+    msg = document.createElement("div");
+    if (playerScore > computerScore) {
+        msg.textContent = "*** YOU SCORED 5! YOU WIN THE GAME! ***"; 
+    } else {
+        msg.textContent = "*** GAME OVER! COMPUTER SCORED 5! ***";
+    }
+    msgBoard.insertBefore(msg, msgBoard.firstChild);
+    msg = document.createElement("div");
+    msg.textContent = "( You may play again at anytime )";
+    msgBoard.insertBefore(msg, msgBoard.firstChild);
 }
 
 function resetScore() {

@@ -43,6 +43,11 @@ div {
     background-color: black;
     box-shadow: 3px 3px gray;
     color: white;
+    overflow: hidden;
+}
+
+#msgBoard div {
+    margin: 5px 0;
 }
 
 button {
