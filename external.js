@@ -61,11 +61,17 @@ function showScoreMsg() {
 
 function showFinalMsg() {
     msg = document.createElement("div");
+    msg.textContent = "***********************************";
+    msgBoard.insertBefore(msg, msgBoard.firstChild);
+    msg = document.createElement("div");
     if (playerScore > computerScore) {
-        msg.textContent = "*** YOU SCORED 5! YOU WIN THE GAME! ***"; 
+        msg.textContent = "* YOU SCORED 5! YOU WIN THE GAME! *"; 
     } else {
-        msg.textContent = "*** GAME OVER! COMPUTER SCORED 5! ***";
+        msg.textContent = "*  GAME OVER! COMPUTER SCORED 5!  *";
     }
+    msgBoard.insertBefore(msg, msgBoard.firstChild);
+    msg = document.createElement("div");
+    msg.textContent = "***********************************";
     msgBoard.insertBefore(msg, msgBoard.firstChild);
     msg = document.createElement("div");
     msg.textContent = "( You may play again at anytime )";
