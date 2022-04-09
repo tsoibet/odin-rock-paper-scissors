@@ -3,7 +3,6 @@
     margin: 0;
     padding: 0;
     font-family: 'Courier New', Courier, monospace;
-    font-weight: bold;
 }
 
 body {
@@ -27,6 +26,7 @@ div {
 #intro {
     margin-top: 26px;
     font-size: 24px;
+    font-weight: bold;
     text-align: center;
 }
 
@@ -53,6 +53,7 @@ div {
 button {
     padding: 16px;
     font-size: 24px;
+    font-weight: bold;
     background-color: white;
     border: 3px solid black;
     box-shadow: 3px 3px gray;
@@ -60,6 +61,5 @@ button {
 
 #footer {
     padding: 26px;
-    font-weight: normal;
     text-align: center;
 }
