@@ -1,0 +1,36 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+}
+
+body {
+    background-color: lightgray;
+}
+
+#content {
+    display: flex;
+    flex-direction: column;
+    gap: 26px;
+}
+
+#playerSelection {
+    padding: 26px;
+    display: flex;
+    justify-content: center;
+    gap: 26px;
+}
+
+button {
+    padding: 16px;
+    font-size: 24px;
+    background-color: white;
+    border: 3px solid black;
+    box-shadow: 3px 3px gray;
+}
+
+#score, #result {
+    padding: 0px 46px;
+}
