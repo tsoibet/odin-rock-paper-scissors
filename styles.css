@@ -7,7 +7,15 @@
 }
 
 body {
+    height: 100vh;
     background-color: lightgray;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+div {
+    padding: 0px 36px;
 }
 
 #content {
@@ -16,11 +24,25 @@ body {
     gap: 26px;
 }
 
+#intro {
+    margin-top: 26px;
+    font-size: 24px;
+    text-align: center;
+}
+
 #playerSelection {
-    padding: 26px;
     display: flex;
     justify-content: center;
     gap: 26px;
+}
+
+#msgBoard {
+    height: 50vh;
+    padding: 16px 0;
+    border: 3px solid white;
+    background-color: black;
+    box-shadow: 3px 3px gray;
+    color: white;
 }
 
 button {
@@ -31,6 +53,8 @@ button {
     box-shadow: 3px 3px gray;
 }
 
-#score, #result {
-    padding: 0px 46px;
+#footer {
+    padding: 26px;
+    font-weight: normal;
+    text-align: center;
 }
