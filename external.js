@@ -71,7 +71,7 @@ function showFinalMsg() {
     if (playerScore > computerScore) {
         msg.innerHTML += "* YOU SCORED 5! YOU WIN THE GAME! *<br>"; 
     } else {
-        msg.innerHTML += "*  GAME OVER! COMPUTER SCORED 5!  *<br>";
+        msg.innerHTML += "** GAME OVER! COMPUTER SCORED 5! **<br>";
     }
     msg.innerHTML += "***********************************";
     msgBoard.insertBefore(msg, msgBoard.firstChild);
