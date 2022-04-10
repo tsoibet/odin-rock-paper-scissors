@@ -13,13 +13,10 @@ body {
     justify-content: space-between;
 }
 
-div {
-    padding: 0px 36px;
-}
-
 #content {
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: 26px;
 }
 
@@ -36,13 +33,19 @@ div {
     gap: 26px;
 }
 
-#msgBoard {
-    height: 50vh;
-    padding: 16px 0;
+#outerMsgBoard {
+    height: 60vh;
+    width: 80vw;
     border: 3px solid white;
     background-color: black;
     box-shadow: 3px 3px gray;
     color: white;
+    padding: 22px 36px;
+}
+
+#msgBoard {
+    height: 100%;
+    width: 100%;
     overflow: hidden;
 }
 
@@ -52,6 +55,7 @@ div {
 
 button {
     padding: 16px;
+    width: 180px;
     font-size: 24px;
     font-weight: bold;
     background-color: white;
