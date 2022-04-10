@@ -1,5 +1,6 @@
 let playerScore = 0;
 let computerScore = 0;
+let isNewGame = true;
 
 const msgBoard = document.querySelector('#msgBoard');
 const buttons = document.querySelectorAll('button');
@@ -17,6 +18,11 @@ function computerPlay() {
 }
 
 function playRound(playerSelection, computerSelection) {
+
+    if (isNewGame) {
+        msgBoard.textContent = "";
+    }
+    isNewGame = false;
     
     if (playerSelection == 'Rock' && computerSelection == 'Scissors' || 
         playerSelection == 'Paper' && computerSelection == 'Rock' || 
@@ -77,5 +83,6 @@ function showFinalMsg() {
 function resetScore() {
     playerScore = 0;
     computerScore = 0;
+    isNewGame = true;
 }
     
