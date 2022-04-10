@@ -69,6 +69,18 @@ button {
     box-shadow: 3px 3px gray;
 }
 
+button:hover {
+    color: white;
+    background-color: black;
+    border: 3px solid white;
+}
+
+button:active {
+    color: white;
+    background-color: #880000;
+    border: 3px solid white;
+}
+
 #footer {
     padding: 26px;
     text-align: center;
