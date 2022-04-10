@@ -36,6 +36,7 @@ body {
 #outerMsgBoard {
     height: 60vh;
     width: 80vw;
+    min-width: 500px;
     border: 3px solid white;
     background-color: black;
     box-shadow: 3px 3px gray;
@@ -62,6 +63,7 @@ button {
     width: 180px;
     font-size: 24px;
     font-weight: bold;
+    color: black;
     background-color: white;
     border: 3px solid black;
     box-shadow: 3px 3px gray;
