@@ -53,6 +53,10 @@ body {
     margin: 5px 0;
 }
 
+#msgBoard div:first-child:after {
+    content: ' █';
+}
+
 button {
     padding: 16px;
     width: 180px;

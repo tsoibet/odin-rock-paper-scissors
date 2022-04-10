@@ -49,32 +49,28 @@ function playRound(playerSelection, computerSelection) {
 
 function showRoundMsg(playerSelection, computerSelection, result) {
     msg = document.createElement("div");
-    msg.textContent = `${playerSelection} V.S. ${computerSelection} - ${result}`;
+    msg.textContent = `${playerSelection} V.S. ${computerSelection} ... ${result}`;
     msgBoard.insertBefore(msg, msgBoard.firstChild);
 }
 
 function showScoreMsg() {
     msg = document.createElement("div");
-    msg.textContent = `Your score: ${playerScore}  -  Computer's score: ${computerScore}`;
+    msg.textContent = `< Your score: ${playerScore} > < Computer's score: ${computerScore} >`;
     msgBoard.insertBefore(msg, msgBoard.firstChild);
 }
 
 function showFinalMsg() {
     msg = document.createElement("div");
-    msg.textContent = "***********************************";
-    msgBoard.insertBefore(msg, msgBoard.firstChild);
-    msg = document.createElement("div");
+    msg.innerHTML = "***********************************<br>";
     if (playerScore > computerScore) {
-        msg.textContent = "* YOU SCORED 5! YOU WIN THE GAME! *"; 
+        msg.innerHTML += "* YOU SCORED 5! YOU WIN THE GAME! *<br>"; 
     } else {
-        msg.textContent = "*  GAME OVER! COMPUTER SCORED 5!  *";
+        msg.innerHTML += "*  GAME OVER! COMPUTER SCORED 5!  *<br>";
     }
+    msg.innerHTML += "***********************************";
     msgBoard.insertBefore(msg, msgBoard.firstChild);
     msg = document.createElement("div");
-    msg.textContent = "***********************************";
-    msgBoard.insertBefore(msg, msgBoard.firstChild);
-    msg = document.createElement("div");
-    msg.textContent = "( You may play again at anytime )";
+    msg.textContent = "You may play again at anytime.";
     msgBoard.insertBefore(msg, msgBoard.firstChild);
 }
 
